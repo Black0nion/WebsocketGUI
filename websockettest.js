@@ -3,6 +3,13 @@ var websocket;
 const wsUriField = document.getElementById("url");
 const output = document.getElementById("output");
 const messageField = document.getElementById('message');
+const message = document.getElementById("message");
+message.addEventListener("keyup", function (event) {
+    if (event.code === "Enter") {
+        event.preventDefault();
+        document.getElementById("send").click();
+    }
+});
 
 function connect() {
     wsUri = wsUriField.value;
@@ -41,7 +48,7 @@ function onError(evt) {
 }
 
 function doSend(message) {
-    if (websocket.readyState == 1) {
+    if (websocket != undefined && websocket.readyState == 1) {
         write("black", "SENT: " + message);
         websocket.send(message);
     } else {

@@ -18,7 +18,7 @@ label {
 }
 
 #url {
-    width: 30%;
+    width: 27.5%;
 }
 
 #message {
@@ -57,6 +57,7 @@ button:hover {
 }
 
 #send {
+    margin-top: 1%;
     width: 20%;
 }
 
@@ -72,4 +73,49 @@ button:hover {
     display: flex;
     align-items: center;
     margin-bottom: 2%;
+}
+
+/***********Alerts***********/
+#alerts {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+    width: 44%;
+    border-radius: 0.5em;
+    position: absolute;
+}
+
+.alert.success {
+    background-color: #04AA6D;
+}
+
+.alert.info {
+    background-color: #2196F3;
+}
+
+.alert.warning {
+    background-color: #ff9800;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
 }

@@ -7,6 +7,12 @@
 </head>
 
 <body>
+    <div id="alerts">
+        <div class="alert">
+            <span class="closebtn">&times;</span>  
+            <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+          </div>
+    </div>
     <h2>WebSocket Test</h2>
     
     <div class="container">
@@ -14,18 +20,10 @@
         <button onclick="connect()" id="connect" class="b-green">CONNECT</button><br>
         <button onclick="disconnect()" id="disconnect" class="b-red">DISCONNECT</button>
     </div>
-    <label for="message">Message to send:</label><input id="message" class="inputfield">
+    <input id="message" class="inputfield"><br>
+    <label for="message">Message to send:</label>
     <button onclick="sendButtonClicked()" id="send" class="b-green">SEND</button>
     <br>
     <div id="output"></div>
     <script src="websockettest.js"></script>
-    <script>
-        var message = document.getElementById("message");
-        message.addEventListener("keyup", function (event) {
-            if (event.keyCode === 13) {
-                event.preventDefault();
-                document.getElementById("send").click();
-            }
-        });
-    </script>
 </body>
