@@ -1,0 +1,63 @@
+#output {
+    margin-top: 1em;
+}
+
+#output p {
+    margin: 0.2em;
+}
+
+#message {
+    width: 50%;
+    height: 2em;
+    padding: 0.1em 2em;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+* {
+    font-family: 'Arial';
+}
+
+button {
+    text-align: center;
+    font-size: 140%;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 1em;
+    height: 2.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    padding: 0.3em;
+}
+
+button:hover {
+    color: white;
+    border-radius: 15px;
+}
+
+.b-green {
+    border: 5px solid #45a049;
+}
+
+.b-red {
+    border: 5px solid red;
+}
+
+#send {
+    width: 20%;
+}
+
+.b-green:hover {
+    background-color: #45a049;
+}
+
+.b-red:hover {
+    background-color: red;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
