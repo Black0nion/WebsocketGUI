@@ -1,56 +1,63 @@
-var wsUri = "ws://tet";
-var output;
+var wsUri;
+var websocket;
+const wsUriField = document.getElementById("url");
+const output = document.getElementById("output");
+const messageField = document.getElementById('message');
 
-function init() {
-    output = document.getElementById("output");
-    writeToScreen('<span style="color: orange;">CONNECTING TO ' + wsUri);
-    testWebSocket();
-}
-
-function testWebSocket() {
+function connect() {
+    wsUri = wsUriField.value;
+    write("orange", "CONNECTING TO " + wsUri + "...");
+    websocket = new WebSocket(wsUri);
     websocket.onopen = function (evt) { onOpen(evt) };
     websocket.onclose = function (evt) { onClose(evt) };
     websocket.onmessage = function (evt) { onMessage(evt) };
     websocket.onerror = function (evt) { onError(evt) };
 }
 
+function disconnect() {
+    if (websocket != undefined && websocket.readyState == 1) {
+        write("orange", "DISCONNECTING...");
+        websocket.close();
+    } else {
+        write("red", "NOT CONNECTED!");
+    }
+}
+
 function onOpen(evt) {
-    writeToScreen('<span style="color: green;">CONNECTED TO ' + wsUri + "</span>");
+    write("green", "CONNECTED TO " + wsUri)
 }
 
 function onClose(evt) {
-    writeToScreen('<span style="color: red;">DISCONNECTED. MESSAGE: ' + evt.reason + " CODE: " + evt.code + "</span>");
+    const reason = (evt.reason != undefined && evt.reason != "") ? "MESSAGE: " + evt.reason + " " : "";
+    write("red", `DISCONNECTED. ${reason}CODE: ${evt.code}`);
 }
 
 function onMessage(evt) {
-    writeToScreen('<span style="color: blue;">RESPONSE: ' + evt.data + '</span>');
-    //websocket.close();
+    write("blue", "RESPONSE: " + evt.data);
 }
 
 function onError(evt) {
-    writeToScreen('<span style="color: red;">ERROR: </span> ' + evt.data);
+    write("red", "ERROR: " + evt.data);
 }
 
 function doSend(message) {
     if (websocket.readyState == 1) {
-        writeToScreen("SENT: " + message);
+        write("black", "SENT: " + message);
         websocket.send(message);
     } else {
-        writeToScreen('<span style="color: red;">NOT CONNECTED!</span>');
+        write("red", "NOT CONNECTED!");
     }
 }
 
-function writeToScreen(message) {
+function write(color, message) {
     var pre = document.createElement("p");
     pre.style.wordWrap = "break-word";
-    pre.innerHTML = message;
+    pre.innerHTML = `<span style="color: ${color};">${message}`;
     output.appendChild(pre);
 }
 
-window.addEventListener("load", init, false);
-
 function sendButtonClicked() {
-    const value = document.getElementById('message').value;
+    const value = messageField.value;
     if (value == "disconnect") {
         websocket.close();
     } else if (value == "connect") {

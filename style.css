@@ -6,12 +6,23 @@
     margin: 0.2em;
 }
 
-#message {
-    width: 50%;
+.inputfield {
     height: 2em;
     padding: 0.1em 2em;
     display: inline-block;
     border-radius: 5px;
+}
+
+label {
+    margin-right: 2%;
+}
+
+#url {
+    width: 30%;
+}
+
+#message {
+    width: 50%;
 }
 
 * {
@@ -60,4 +71,5 @@ button:hover {
 .container {
     display: flex;
     align-items: center;
+    margin-bottom: 2%;
 }

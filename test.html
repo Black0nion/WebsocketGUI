@@ -3,30 +3,27 @@
 
 <head>
     <title>WebSocket Test</title>
-    <script src="websockettest.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <h2>WebSocket Test</h2>
-
+    
     <div class="container">
-        <input id="url">
+        <label for="url">URL:</label><input id="url" type="text" class="inputfield">
         <button onclick="connect()" id="connect" class="b-green">CONNECT</button><br>
-        <button onclick="connect()" id="connect" class="b-red">DISCONNECT</button>
+        <button onclick="disconnect()" id="disconnect" class="b-red">DISCONNECT</button>
     </div>
-    <input id="message">
+    <label for="message">Message to send:</label><input id="message" class="inputfield">
     <button onclick="sendButtonClicked()" id="send" class="b-green">SEND</button>
     <br>
     <div id="output"></div>
+    <script src="websockettest.js"></script>
     <script>
         var message = document.getElementById("message");
         message.addEventListener("keyup", function (event) {
-            // Number 13 is the "Enter" key on the keyboard
             if (event.keyCode === 13) {
-                // Cancel the default action, if needed
                 event.preventDefault();
-                // Trigger the button element with a click
                 document.getElementById("send").click();
             }
         });
