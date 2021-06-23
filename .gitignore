@@ -1,1 +1,4 @@
 .vscode
+websocket.js
+testserver/node_modules
+testserver/package-lock.json
