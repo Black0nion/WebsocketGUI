@@ -2,7 +2,7 @@
 <meta charset="utf-8" />
 
 <head>
-    <title>WebSocket Test</title>
+    <title>WebSocket Client</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,8 +15,43 @@
         </div>
     </div>
     -->
-    <h2>WebSocket Client</h2>
+    <h1>BlackOnion WebSocket Client</h1>
 
+    <main>
+        <div id="message_container">
+            <table>
+                <thead>
+                    <tr>
+                        <td>Data</td>
+                        <td>Time</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            Some data and icons
+                        </td>
+                        <td>
+                            date
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="message_input">
+            <input type="text" id="message_input_field" placeholder="Input a WebSocket message" autocapitalize="none" autocomplete="none" />
+            <button id="disconnect">Disconnect</button>
+        </div>
+
+        <div id="connect_layover">
+            <div id="connect_backdrop"></div>
+            <div id="connect_content">
+                some test
+            </div>
+        </div>
+    </main>
+
+<!--
     <div class="container">
         <label for="url">URL:</label><input id="url" type="text" class="inputfield">
         <button onclick="connect()" id="connect" class="b-green color-wipe">CONNECT</button><br>
@@ -26,6 +61,8 @@
     <label for="message">Message to send:</label>
     <button onclick="sendButtonClicked()" id="send" class="b-green color-wipe">SEND</button>
     <br>
-    <div id="output"></div>
+    <div id="output"></div> -->
+
+    <script src="websocket.js"></script>
     <script src="websockettest.js"></script>
 </body>

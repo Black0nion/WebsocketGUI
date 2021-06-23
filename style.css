@@ -1,3 +1,124 @@
+* {
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    box-sizing: border-box;
+}
+:root {
+    --ff: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+html {
+    height: 100vh;
+    overflow: hidden;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #aaa;
+    /* box-shadow: 0 -9px 10px 7px #888; */
+    color: #000;
+    font: 500 25px/30px var(--ff);
+    display: block;
+    padding: 15px;
+    margin: 0;
+    width: 100%;
+    z-index: 100
+}
+
+main {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    position: relative;
+}
+
+#message_container {
+    flex: 1;
+    overflow: auto;
+}
+table {
+    font: 400 17px/20px var(--ff);
+    border-collapse: collapse;
+    width: 100%;
+}
+thead {
+    background: #eee;
+    font-weight: 500;
+}
+td {
+    border: 1px solid #aaa;
+    padding: 5px 10px;
+}
+tr:first-child td { border-top: none; }
+tr td:first-child { border-left: none; width: 70%; }
+tr td:last-child { border-right: none; width: 30%; }
+
+#message_input {
+    background-color: #eee;
+    box-shadow: 0 9px 10px 7px #555;
+    display: flex;
+    width: 100%;
+}
+#message_input_field {
+    appearance: none;
+    border: none;
+    color: #000;
+    font: 400 20px/25px "Courier", monospace;
+    display: block;
+    flex: 1;
+    margin: 0;
+    padding: 15px;
+}
+#disconnect {
+    appearance: none;
+    background-color: #f1f1f1;
+    border: none;
+    border-left: 1px solid #aaa;
+    color: #000;
+    cursor: pointer;
+    display: block;
+    font: 400 20px/25px "Courier", monospace;
+    margin: 0;
+    padding: 15px;
+    width: 200px;
+}
+#disconnect:hover {
+    background-color: #eaeaea;
+}
+
+#connect_layover {
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    position: absolute;
+}
+#connect_backdrop {
+    background-color: rgba(0, 0, 0, .4);
+    height: 100%;
+    width: 100%;
+}
+#connect_content {
+    border: 1px solid #aaa;
+    background-color: #fff;
+    left: 50%;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    width: 600px;
+}
+
+
+
 #output {
     margin-top: 1em;
 }
@@ -24,11 +145,7 @@ label {
 #message {
     width: 50%;
 }
-
-* {
-    font-family: 'Arial';
-}
-
+/*
 button {
     text-align: center;
     font-size: 140%;
@@ -41,12 +158,12 @@ button {
     cursor: pointer;
     transition: all 0.4s;
     padding: 0.3em;
-}
-
+} */
+/*
 button:hover {
     color: white;
     border-radius: 15px;
-}
+} */
 
 .b-green {
     border: 5px solid #45a049;
