@@ -146,6 +146,7 @@ button:hover {
 }
 
 /* The two translate values still need improvement, they are not always centered */
+
 .color-wipe::after {
     content: "";
     position: absolute;
