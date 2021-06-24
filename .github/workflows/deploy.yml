@@ -15,10 +15,10 @@ jobs:
         run: |
           npm ci
           npx tsc
-          mkdir dist
-          cp src/index.html dist/index.html
-          cp src/style.css dist/style.css
-          cp src/websocket.js dist/websocket.js
+          mkdir docs
+          cp src/index.html docs/index.html
+          cp src/style.css docs/style.css
+          cp src/websocket.js docs/websocket.js
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
