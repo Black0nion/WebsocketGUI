@@ -16,7 +16,7 @@
     --header-bg: #f1f1f1;
 
     --table-header-bg: #eee;
-    --table-outgoing-bg: #e0e0e0;
+    --table-outgoing-bg: #e5e5e5;
     --table-connected-bg: #e1c27e;
 
     --input-shadow: #555;
@@ -124,19 +124,34 @@ tr td:first-child { border-left: none; width: 70%; }
 tr td:last-child { border-right: none; width: 30%; }
 
 tbody td:first-child {
-    padding-left: 30px;
+    padding-left: 35px;
 }
 tr.message_out {
     background-color: var(--table-outgoing-bg);
 }
 tr.message_out td:first-child::before {
-    background-color: #fff;
     content: "";
-    left: 0;
-    height: 100%;
+    border-top: 3px solid var(--body-color);
+    border-left: 3px solid var(--body-color);
+    left: 10px;
+    height: 10px;
     position: absolute;
-    top: 0;
-    width: 30px;
+    top: 8px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    width: 10px;
+}
+tr.message_out td:first-child::after {
+    background-color: var(--body-color);
+    content: "";
+    left: 15px;
+    height: 15px;
+    position: absolute;
+    top: 9px;
+    width: 3px;
 }
 tr.message_connected {
     background-color: var(--table-connected-bg);
@@ -190,6 +205,7 @@ tr.message_connected {
     top: 0;
     width: 100%;
     position: absolute;
+    z-index: 90;
 }
 #connect_backdrop {
     background-color: rgba(0, 0, 0, .4);

@@ -9,6 +9,8 @@ EventTarget.prototype.on = EventTarget.prototype.addEventListener;
 let websocket: WebSocket = null;
 
 const elements = {
+    messageContainer: el("#message_container"),
+    tableHeader: el("thead"),
     tableContent: el("tbody"),
     messageInput: el<HTMLInputElement>("#message_input_field"),
 
@@ -84,6 +86,11 @@ function connectToWebsocket(url: string, header: string) {
         ws.on("open", onopen);
     });
 }
+
+// elements.messageContainer.on("scroll", () => {
+//     const scroll = elements.messageContainer.scrollTop;
+//     elements.tableHeader.style.transform = `translateY(${scroll}px)`;
+// });
 
 elements.messageInput.on("keydown", (e: KeyboardEvent) => {
     if (e.keyCode == 13) {
