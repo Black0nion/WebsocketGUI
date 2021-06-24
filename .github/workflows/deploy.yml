@@ -19,6 +19,8 @@ jobs:
           cp src/index.html docs/index.html
           cp src/style.css docs/style.css
           cp src/websocket.js docs/websocket.js
+          cp src/favicon.svg docs/favicon.svg
+          cp src/favicon.ico docs/favicon.ico
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
