@@ -2,6 +2,9 @@
 # WebSocketGUI
 This is a simple GUI to test Websockets.
 
+## Hosted
+This repo contains the source of the WebsocketGUI. If you don't want to host your own server (for example to be able to access local websockets), you can use [our hosted site](https://black0nion.github.io/WebsocketGUI/).
+
 ## Setup
 *NOTE: The website needs to be hosted on a webserver. It doesn't work when you open it as a file because of CORS errors (if someone knows how to fix them, please open a PR). Described here are some ways to easily host the GUI on a Webserver. More instructions may follow.*
 ### Live Server
