@@ -4,7 +4,8 @@
             "ESNext",
             "DOM"
         ],
-        "target": "ES2018"
+        "target": "ES2018",
+        "sourceMap": true
     },
     "include": ["."]
 }

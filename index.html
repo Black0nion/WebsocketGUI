@@ -26,16 +26,7 @@
                         <td>Time</td>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            Some data and icons
-                        </td>
-                        <td>
-                            date
-                        </td>
-                    </tr>
-                </tbody>
+                <tbody></tbody>
             </table>
         </div>
         <div id="message_input">
@@ -46,23 +37,17 @@
         <div id="connect_layover">
             <div id="connect_backdrop"></div>
             <div id="connect_content">
-                some test
+                <form>
+                    <span>WebSocket connection URL:</span>
+                    <input type="text" id="websocket_connection" placeholder="Enter WebSocket URL here" required autofocus />
+                    <span>Authorization (optional, uses the header "Sec-WebSocket-Protocol"):</span>
+                    <input type="text" id="websocket_connection_header" placeholder="(optional) header" />
+                    <div id="connect_error" style="display: none">Couldn't connect to the WebSocket server. Please make sure to input a correct URL and have your server running.</div>
+                    <button id="connect" type="submit">Connect</button>
+                </form>
             </div>
         </div>
     </main>
 
-<!--
-    <div class="container">
-        <label for="url">URL:</label><input id="url" type="text" class="inputfield">
-        <button onclick="connect()" id="connect" class="b-green color-wipe">CONNECT</button><br>
-        <button onclick="disconnect()" id="disconnect" class="b-red color-wipe">DISCONNECT</button>
-    </div>
-    <input id="message" class="inputfield"><br>
-    <label for="message">Message to send:</label>
-    <button onclick="sendButtonClicked()" id="send" class="b-green color-wipe">SEND</button>
-    <br>
-    <div id="output"></div> -->
-
     <script src="websocket.js"></script>
-    <script src="websockettest.js"></script>
 </body>
