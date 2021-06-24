@@ -1,0 +1,23 @@
+{
+  "name": "blackonion-websocket-client",
+  "version": "1.0.0",
+  "description": "A client for testing WebSockets",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./testserver.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Black0nion/WebsocketGUI.git"
+  },
+  "author": "BlackOnion",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Black0nion/WebsocketGUI/issues"
+  },
+  "homepage": "https://github.com/Black0nion/WebsocketGUI#readme",
+  "devDependencies": {
+    "typescript": "^4.3.4",
+    "ws": "^7.5.0"
+  }
+}

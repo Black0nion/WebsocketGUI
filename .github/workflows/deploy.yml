@@ -13,9 +13,11 @@ jobs:
 
       - name: Install and Build
         run: |
-          npm install typescript -g
-          tsc
-          rm .gitignore
+          npm ci
+          npx tsc
+          cp src/index.html dist/index.html
+          cp src/style.css dist/style.css
+          cp src/websocket.js dist/websocket.js
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.4
