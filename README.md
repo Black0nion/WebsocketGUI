@@ -11,7 +11,7 @@ This is a simple GUI to test Websockets.
 3. Press `Ctrl + Shift + P` to open the command palette, type in `Open with Live Server` and press enter
 4. Your browser should start automatically
 5. You may see a overview of files. Click on `index.html` to open the GUI
-6. Start using the WebSocketGUI! (For more instructions see [How to use WebSocketGUI](#how-to-use-websocketgui)
+6. Start using the WebSocketGUI! (For more instructions see [How to use WebSocketGUI](#how-to-use-websocketgui))
 
 ## How to use WebSocketGUI
 *If you have any questions regarding this software, feel free to contact me on Discord: \_SIM\_#6866*
