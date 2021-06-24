@@ -33,8 +33,8 @@ elements.connectForm.on("submit", e => {
     connectToWebsocket(elements.connectWebsocketUrl.value, elements.connectWebsocketHeader.value).then(success => {
         console.log(success);
         if (success) {
-            elements.connectOverlay.style.display = "none";
             resetOverlay();
+            elements.connectOverlay.style.display = "none";
             startWebsocket();
         }
         else {
@@ -46,7 +46,6 @@ elements.connectForm.on("submit", e => {
 });
 elements.disconnectButton.on("click", () => {
     websocket.close(1000);
-    websocket = null;
 });
 
 function resetOverlay() {
@@ -93,37 +92,35 @@ function connectToWebsocket(url: string, header: string) {
 // });
 
 elements.messageInput.on("keydown", (e: KeyboardEvent) => {
-    if (e.keyCode == 13) {
+    if (e.key == "Enter") {
         websocket.send(elements.messageInput.value);
-        onMessage(elements.messageInput.value, false);
+        onMessage(elements.messageInput.value, "message_out");
         elements.messageInput.value = "";
     }
 });
 
-function onMessage(content: string, incomming: boolean) {
+function onMessage(content: string, className: string) {
     const date = now();
     const tr = document.createElement("tr");
-    tr.className = incomming ? "message_in" : "message_out";
+    tr.className = className;
     tr.appendChild(document.createElement("td")).appendChild(document.createTextNode(content));
     tr.appendChild(document.createElement("td")).appendChild(document.createTextNode(date));
     elements.tableContent.appendChild(tr);
+    elements.messageContainer.scrollTo(0, elements.messageContainer.scrollHeight);
 }
 
 function startWebsocket() {
-    const date = now();
-    const tr = document.createElement("tr");
-    tr.className = "message_connected";
-    tr.appendChild(document.createElement("td")).appendChild(document.createTextNode("Connected to WebSocket"));
-    tr.appendChild(document.createElement("td")).appendChild(document.createTextNode(date));
-    elements.tableContent.appendChild(tr);
+    onMessage("Connected to WebSocket at " + websocket.url, "message_connected");
     elements.messageInput.focus();
 
     websocket.onmessage = e => {
-        onMessage(e.data, true);
+        onMessage(e.data, "message_in");
     };
-    websocket.onclose = () => {
-        elements.tableContent.innerHTML = "";
+    websocket.onclose = e => {
+        onMessage(`Connection with ${websocket.url} closed. Code: ${e.code}`, "message_closed");
         elements.connectOverlay.style.display = "block";
+        elements.connectWebsocketUrl.focus();
+        websocket = null;
     };
 }
 

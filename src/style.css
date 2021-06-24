@@ -18,6 +18,7 @@
     --table-header-bg: #eee;
     --table-outgoing-bg: #e5e5e5;
     --table-connected-bg: #e1c27e;
+    --table-closed-bg: #bcd2f7;
 
     --input-shadow: #555;
     --input-color: #000;
@@ -45,6 +46,7 @@
         --table-header-bg: #777;
         --table-outgoing-bg: #3f3f3f;
         --table-connected-bg: #726144;
+        --table-closed-bg: #3e4757;
 
         --input-shadow: #a0a0a0;
         --input-color: #fff;
@@ -118,6 +120,7 @@ td {
     border: 1px solid var(--border);
     padding: 5px 10px;
     position: relative;
+    z-index: 5;
 }
 tr:first-child td { border-top: none; }
 tr td:first-child { border-left: none; width: 70%; }
@@ -155,6 +158,9 @@ tr.message_out td:first-child::after {
 }
 tr.message_connected {
     background-color: var(--table-connected-bg);
+}
+tr.message_closed {
+    background-color: var(--table-closed-bg);
 }
 
 /* #endregion */
