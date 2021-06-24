@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+
+<head>
+    <title>WebSocket Client</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--
+    <div id="alerts">
+        <div class="alert">
+            <span class="closebtn">&times;</span>
+            <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+        </div>
+    </div>
+    -->
+    <h1>BlackOnion WebSocket Client</h1>
+
+    <main>
+        <div id="message_container">
+            <table>
+                <thead>
+                    <tr>
+                        <td>Data</td>
+                        <td>Time</td>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div id="message_input">
+            <input type="text" id="message_input_field" placeholder="Input a WebSocket message" autocapitalize="none" autocomplete="none" />
+            <button id="disconnect">Disconnect</button>
+        </div>
+
+        <div id="connect_layover">
+            <div id="connect_backdrop"></div>
+            <div id="connect_content">
+                <form>
+                    <span>WebSocket connection URL:</span>
+                    <input type="text" id="websocket_connection" placeholder="Enter WebSocket URL here" required autofocus />
+                    <span>Authorization (optional, uses the header "Sec-WebSocket-Protocol"):</span>
+                    <input type="text" id="websocket_connection_header" placeholder="(optional) header" />
+                    <div id="connect_error" style="display: none">Couldn't connect to the WebSocket server. Please make sure to input a correct URL and have your server running.</div>
+                    <button id="connect" type="submit">Connect</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="websocket.js"></script>
+</body>

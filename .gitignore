@@ -1,5 +1,4 @@
 .vscode
-dist/
 src/websocket.js
 src/websocket.js.map
 node_modules/
